@@ -18,13 +18,11 @@ import com.microsoft.aad.msal4j.SilentParameters;
 
 public class TelemetrySender {
 
-	private final static String CLIENT_ID = "3e8eadd0-92f7-40c4-bd0c-30f86e369056";
-	private final static String AUTHORITY = "https://login.microsoftonline.com/e17101a9-e964-4ae9-bf85-59b383f3fc2d/";
-	private final static String CLIENT_SECRET = "OLTLNlcc1~i28qzrud3lA9-8_~62x0GH~~";
-	private final static Set<String> SCOPE = Collections.singleton("api://9914083b-88c0-493d-849f-873f95e498f3/.default");
-//	private final static String API_URL = "https://foobarorga.azure-api.net/";
-//	private final static String API_PATH = "api/Telemetry";
-	private final static String API_URL = "http://foobarorga.azure-api.net/foobar/";
+	private final static String CLIENT_ID = "<InsertClientIdHere>";
+	private final static String AUTHORITY = "<InsertAuthorityHere>";
+	private final static String CLIENT_SECRET = "<InsertClientSecretHere>";
+	private final static Set<String> SCOPE = Collections.singleton("<InsertScopesHere>");
+	private final static String API_URL = "<InsertUrlToAPIManagementHere>";
 	private final static String API_PATH = "token";
 	
 
@@ -42,7 +40,7 @@ public class TelemetrySender {
 		try {
 			SilentParameters silentParameters = SilentParameters.builder(SCOPE).build();
 
-			// try to acquire token silently. This call will fail since the token cache does not
+			// try to acquire token silently from cache. This call will fail since the token cache does not
 			// have a token for the application you are requesting an access token for
 			result = app.acquireTokenSilently(silentParameters).join();
 
