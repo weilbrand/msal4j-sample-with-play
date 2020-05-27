@@ -2,7 +2,7 @@
 
 Disclaimer: This code is not meant for production!
 
-# Projects
+## Projects
 
 The repo contains two projects:
 
